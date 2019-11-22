@@ -1,3 +1,4 @@
+create view currents_metadata_mims_view as
 select
 cur_mooring.survey_id as AlternateID,
 inv.data_available as Status1,
@@ -61,4 +62,4 @@ left join planam on inv.planam_code=planam.code
 left join projection on inv.projection_code=projection.code
 left join spheroid on inv.spheroid_code=spheroid.code
 left join datum on inv.datum_code=datum.code
-left join survey_notes on inv.survey_id=survey_notes.survey_id;
+left join survey_notes on inv.survey_id=survey_notes.survey_id order by cur_mooring.survey_id desc;
