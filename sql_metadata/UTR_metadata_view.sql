@@ -29,7 +29,11 @@ cur_mooring.longitude as longitude,
 cur_mooring.date_time_start as date_start,
 cur_mooring.date_time_end as date_end,
 cur_mooring.stndep as project_depth,
-cur_mooring.publication_ref as publication_reference
+cur_mooring.publication_ref as publication_reference,
+cur_mooring.prjnam as cur_project_name,
+cur_mooring.stnnam as cur_station_name,
+cur_mooring.arenam as cur_area_name,
+cur_mooring.description as cur_description
 
 from inventory as inv
 
@@ -45,4 +49,4 @@ left join institutes as in3 on inv.instit_code=in3.code
 
 where inv.survey_type_code=6 order by inv.survey_id desc;
 
-select * from inventory;
+
